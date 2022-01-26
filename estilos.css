@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+aside {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #014d4e;
+    padding-top: 0%;
+    padding-left: 0%;
+    height: 100vh;
+    width: 15vh;
+}
+
+aside img {
+    object-fit: cover;
+    width: 15vh;
+    height: 15vh;
+}
+
+aside ul {
+    padding-top: 10vh;
+}
+
+aside i {
+    color: white;
+    font-size: 6vh;
+    list-style: none;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
+}
+
+main {
+    /*grow shrink basis*/
+    flex: 1;
+}
