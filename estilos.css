@@ -1,12 +1,26 @@
+/***************************  AJUSTES GLOBALES  ****************************** */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
 body {
+    font-family: 'Baloo Tamma 2', cursive;
+    line-height: 1.8;
     display: flex;
 }
+
+
+/**********************************  ASIDE DERECHA ****************************************/
 
 aside {
     position: sticky;
@@ -18,28 +32,584 @@ aside {
     padding-top: 0%;
     padding-left: 0%;
     height: 100vh;
-    width: 15vh;
+    width: 10vh;
 }
 
 aside img {
     object-fit: cover;
-    width: 15vh;
-    height: 15vh;
+    width: 10vh;
+    height: 10vh;
 }
 
 aside ul {
-    padding-top: 10vh;
+    padding-top: 38vh;
 }
 
 aside i {
     color: white;
-    font-size: 6vh;
+    font-size: 5vh;
     list-style: none;
-    margin-left: 3vh;
+    margin-left: 2.5vh;
     margin-bottom: 3vh;
+}
+
+i:hover {
+    color: orange;
 }
 
 main {
     /*grow shrink basis*/
     flex: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    background-color: #ff9408;
+    height: 10vh;
+    padding-right: 10vh;
+}
+
+.menu div {
+    padding-right: 7vh;
+    padding-top: 2vh;
+}
+
+.menu div a {
+    color: white;
+    text-decoration: none;
+    font-size: 3vh;
+}
+
+
+/*********************************   HERO ANIMADO    *****************************************************/
+
+section#hero {
+    height: 100vh;
+    background-image: url('https://www.xtrafondos.com/descargar.php?id=4560&resolucion=3840x2160');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.contenido_hero {
+    background-color: #ff9408;
+    ;
+    padding: calc(1rem + 2vw);
+    height: calc(5rem + 20vmax);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: hero 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes hero {
+    0% {
+        transform: translateX(100rem) rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.titulo_hero {
+    font-size: calc(2rem + 3vw);
+    color: white;
+}
+
+.parrafo_hero {
+    font-family: "Indie Flower", cursive;
+    font-size: calc(1.5rem + 1vw);
+    color: white;
+}
+
+.link_hero:link,
+.link_hero:visited {
+    padding: 1rem 0;
+    transition: all 0.5s ease-in-out;
+    width: 9rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.link_hero:link::after,
+.link_hero:visited::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #014d4e;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: -1;
+}
+
+.link_hero:hover::after,
+.link_hero:active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.contenido_hero a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+/***********************   CARTAS DE  TRABAJO   *********************************/
+
+section#trabajo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #017374;
+}
+
+div.trabajo_carta {
+    padding: 3vh;
+    flex-basis: 45vh;
+    flex-grow: 1;
+    clip-path: polygon( 20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+div.trabajo_carta img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: filter 0.45s ease;
+}
+
+div.trabajo_carta img:hover,
+div.trabajo_carta img:active {
+    filter: sepia(80%);
+}
+
+
+/************************************  SOBRE MI  ********************************************/
+
+section#sobre_mi {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: #ff9408;
+}
+
+.sobre_mi_imagen,
+.sobre_mi_contenido {
+    flex-basis: 40rem;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.sobre_mi_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: coverl;
+}
+
+.sobre_mi_titulo {
+    font-size: 4rem;
+    padding: 1rem 0;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.sobre_mi_titulo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.3rem;
+    width: 10%;
+    background-color: #014d4e;
+}
+
+.sobre_mi_titulo,
+.sobre_mi_p {
+    margin-bottom: 4rem;
+    letter-spacing: 0.2rem;
+}
+
+.sobre_mi_p {
+    font-size: 1.8rem;
+    font-family: "Indie Flower", cursive;
+}
+
+.sobre_mi_mas:link,
+.sobre_mi_mas:visited {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.sobre_mi_mas:link::after,
+.sobre_mi_mas:visited::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #014d4e;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: -1;
+}
+
+.sobre_mi_mas:hover::after,
+.sobre_mi_mas:active::after {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+
+/*****************************************  SERVICIOS  **************************************/
+
+section#services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 6rem 2rem 2rem;
+    background-color: #014d4e;
+}
+
+.service {
+    padding: 4rem;
+    margin: 0 2rem 4rem;
+    flex-basis: 32rem;
+    flex-grow: 1;
+    background-color: #ff9408;
+    ;
+    border-bottom: 0.2rem solid #ff9408;
+    ;
+    border-right: 0.2rem solid #ff9408;
+    ;
+    border-left: 0.2rem solid #ff9408;
+    ;
+    position: relative;
+    z-index: 1;
+}
+
+.service::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #014d4e;
+    transform: scaleX(0);
+    transition: transform 0.45s cubic-bezier(1, 0, 0, 1);
+    z-index: -1;
+}
+
+.service:hover::after,
+.service:active::after {
+    transform: scaleX(1);
+}
+
+.service i,
+.service .services--title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.service i {
+    color: white;
+}
+
+.services--title {
+    text-transform: uppercase;
+}
+
+.services--para {
+    font-family: "Indie Flower" cursive;
+    font-size: 2rem;
+    color: white;
+}
+
+
+/*********************** SKILLS  ******************************/
+
+section#skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3vh;
+    background-color: #017374;
+}
+
+.skills__design,
+.skills__coding {
+    padding: calc(1rem + 2vw);
+    text-transform: uppercase;
+    flex-basis: 40rem;
+    flex-grow: 1;
+}
+
+.skills__design--title,
+.skills__coding--title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.skills__design h4,
+.skills__coding h4 {
+    font-size: 2rem;
+    color: white;
+}
+
+.skills__design--progress,
+.skills__coding--progress {
+    position: relative;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 3rem;
+    background-color: #014d4e;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.skills__design--progress span,
+.skills__coding--progress span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: #ff9408;
+}
+
+.skills__design--progress__1 {
+    animation: design-1 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+.skills__design--progress__2 {
+    animation: design-2 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-2 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+.skills__design--progress__3 {
+    animation: design-3 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-3 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+.skills__design--progress__4 {
+    animation: design-4 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes design-4 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+.skills__coding--progress__1 {
+    animation: coding-1 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 95%;
+    }
+}
+
+.skills__coding--progress__2 {
+    animation: coding-2 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-2 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+.skills__coding--progress__3 {
+    animation: design-3 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-3 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+.skills__coding--progress__4 {
+    animation: coding-4 4s infinite cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes coding-4 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+
+/********************************************/
+
+section#testimonials {
+    padding: calc(1rem + 2vw);
+    background-color: #ff9408;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.testimonials__card {
+    padding: 2vw;
+    flex-basis: 50rem;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials__card--img {
+    height: 100%;
+    width: 100;
+}
+
+.testimonials__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.35s ease-in-out;
+}
+
+.testimonials__card--title {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.testimonials__card--para {
+    font-family: "Indie Flower", cursive;
+    font-size: 1.5rem;
+}
+
+.testimonials__card--content {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 80%;
+    background-color: #01727498;
+    padding: 1.5rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s ease-in-out;
+}
+
+.testimonials__card:hover .testimonials__card--content,
+.testimonials__card:active .testimonials__card--content {
+    transform: scaleY(1);
+    transform-origin: center;
+}
+
+.testimonials__card:hover .testimonials__card--img img,
+.testimonials__card:active .testimonials__card--img img {
+    transform: scale(0.7);
+}
+
+
+/********************* FORMULARIO DE CONTACTO  **********************/
+
+section#contact {
+    height: 100vh;
+    background-image: url("https://s2.best-wallpaper.net/wallpaper/3840x2160/1607/Gray-cat-blue-eyes-grass_3840x2160.jpg");
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact__form {
+    flex-basis: 40rem;
+    flex-direction: column;
+    background-color: #05252598;
+}
+
+.contact__form input,
+.contact__form textarea {
+    color: white;
+    font-family: "Indie Flower", cursive;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    padding: 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: #ff9408;
+}
+
+.contact__form textarea {
+    height: 30vh;
+}
+
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
 }
